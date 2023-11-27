@@ -1,5 +1,4 @@
- //rafce
- import React,{ useEffect , useRef } from 'react'
+import React,{ useEffect , useRef } from 'react'
 
  const Layout = () => {
     const texttitleRef = useRef(null)
@@ -41,7 +40,7 @@
     return (
         <div>
 
-            <section className='parallax'>
+            <section className='parallax' id='Content0'>
                     <img src='/Images/background.png' ref={background} />
                     <img src='/Images/mountain1.png' ref={mountain1}/>                   
                     <img src='/Images/mountain2.png' ref={mountain2}/>    
