@@ -1,5 +1,3 @@
-
-
 * {
   margin: 0;
   padding: 0;
@@ -17,14 +15,15 @@ header {
   z-index: 100;
 }
 .navigation a {
-  text-decoration: none; 
+  text-decoration: none;
   color: rgb(255, 255, 255);
   padding: 15px 15px;
   border-radius: 15px;
   margin: 0 10px;
   font-weight: 600;
 }
-.navigation a:hover, .navigation a.active{
+.navigation a:hover,
+.navigation a.active {
   background: green;
   color: white;
 }
@@ -49,7 +48,7 @@ header {
   left: 0;
   width: 100%;
   height: 100vh;
-  pointer-events: non;  
+  pointer-events: non;
 }
 .section {
   position: absolute;

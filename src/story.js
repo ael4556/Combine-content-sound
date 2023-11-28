@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 const Story = () => {
   const texttitleRef = useRef(null);
@@ -7,6 +7,10 @@ const Story = () => {
   const mountain2 = useRef(null);
   const sun = useRef(null);
   const leaf = useRef(null);
+
+  const [doorFrame, setDoorFrame] = useState(1);
+  const [fixedDoor, setFixedDoor] = useState(false);
+  const [isBottom, setIsBottom] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +30,28 @@ const Story = () => {
       mountain2.current.style.left = `${value * -1.5}px`;
 
       console.log("value = ", value);
+      if (value > 1124.390625 && value < 2000) {
+        setFixedDoor(true);
+        setDoorFrame(1);
+        if (value > 1800) {
+          setDoorFrame(5);
+        } else if (value > 1600) {
+          setDoorFrame(4);
+        } else if (value > 1400) {
+          setDoorFrame(3);
+        } else if (value > 1200) {
+          setDoorFrame(2);
+        }
+      } else {
+        setFixedDoor(false);
+      }
+      if (value > 1500) {
+        setIsBottom(true);
+      } else {
+        setIsBottom(false);
+      }
+
+      console.log("Value =>", value);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -50,97 +76,19 @@ const Story = () => {
       </section>
 
       <section className="section" id="Content">
-        <h2>Content</h2>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.v
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
-        <p>
-          {" "}
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </p>
+        {doorFrame >= 1 && doorFrame <= 5 && (
+          <img
+            src={`/Images/door/r${doorFrame}.png`}
+            style={{
+              position: fixedDoor ? "fixed" : "absolute",
+              top: fixedDoor ? "5%" : isBottom ? "1100px" : "260px",
+              left: "10%",
+            }}
+          />
+        )}
+        <img src="/Images/plant.png" />
+        <img src="/Images/plant.png" />
+        <img src="/Images/plant.png" />
       </section>
     </div>
   );
