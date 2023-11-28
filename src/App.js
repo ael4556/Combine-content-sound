@@ -1,15 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import Layout from './components/Layout';
-import Navbar from './components/navbar/nevber';
-
+import "./App.css";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <div>
       <Layout />
-      <Navbar />
-      
     </div>
   );
 }
