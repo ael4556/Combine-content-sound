@@ -20,7 +20,7 @@ const Navbar = () => {
     <>
 <div className="flex items-center justify-end p-4">
         <button
-          className="fixed top-0 right-2 focus:outline-none hover:-translate-y-1 hover:scale-110 bg-green-500 hover:bg-green-700 duration-300 rounded-2xl transition ease-in-out delay-50 hover:shadow-md py-2 px-2"
+          className="fixed top-2 right-2 focus:outline-none hover:-translate-y-1 hover:scale-110 bg-green-500 hover:bg-green-700 duration-300 rounded-2xl transition ease-in-out delay-50 hover:shadow-md py-2 px-2"
           onClick={toggleMenu}
         >
           <img src={BurgerIcon} alt="Menu Icon" className="w-8 h-8" />

@@ -28,7 +28,7 @@ const BackgroundMusic = () => {
   };
 
   return (
-    <div className="fixed right-2 p-4 top-14 hover:-translate-y-1 hover:scale-110 bg-green-500 hover:bg-green-700 duration-300 rounded-2xl transition ease-in-out delay-50 hover:shadow-md py-2 px-2">
+    <div className="fixed right-2 p-4 top-16 hover:-translate-y-1 hover:scale-110 bg-green-500 hover:bg-green-700 duration-300 rounded-2xl transition ease-in-out delay-50 hover:shadow-md py-2 px-2">
       <button id="audioBtn" onClick={togglePlay}>
         {play ? <IconPause /> : <IconPlay />}
       </button>

@@ -30,7 +30,7 @@ const Story = () => {
       mountain2.current.style.left = `${value * -1.5}px`;
 
       console.log("value = ", value);
-      if (value > 1124.390625 && value < 2000) {
+      if (value > 854 && value < 2000) {
         setFixedDoor(true);
         setDoorFrame(1);
         if (value > 1800) {
@@ -75,7 +75,8 @@ const Story = () => {
         <img src="/Images/plant.png" />
       </section>
 
-      <section className="section" id="Content">
+      <section className="section" id="Content1">
+        
         {doorFrame >= 1 && doorFrame <= 5 && (
           <img
             src={`/Images/door/r${doorFrame}.png`}
@@ -86,9 +87,15 @@ const Story = () => {
             }}
           />
         )}
-        <img src="/Images/plant.png" />
-        <img src="/Images/plant.png" />
-        <img src="/Images/plant.png" />
+        <img className=" fixed" src="/Images/plant.jpg" />
+        <img src="/Images/plant.jpg" />
+        <img src="/Images/plant.jpg" />
+        <img src="/Images/plant.jpg" />
+        
+      </section>
+
+      <section className="section" id="Content">
+      <h1 className=" text-4xl text-white ">Lorem Ipsum</h1>
       </section>
     </div>
   );
